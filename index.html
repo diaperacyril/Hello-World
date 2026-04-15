@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Activity</title>
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: space-around; /* For Part 1 */
+            align-items: center;
+        }
+
+        .flex-wrap-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start; /* Align items to the start */
+            gap: 10px; /* Space between cards */
+        }
+
+        .card {
+            background-color: #f0f0f0; /* Light grey */
+            padding: 10px;
+            border-radius: 5px;
+            width: 150px; /* Adjust as needed */
+            text-align: center;
+        }
+
+        .box {
+            background-color: #add8e6; /* Light blue */
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .flex-order-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .middle-panel {
+            flex-grow: 2; /* Example: Middle panel takes more space */
+            text-align: center;
+        }
+
+        .left-panel, .right-panel {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Part 1: Basic Flexbox Row</h2>
+    <div class="flex-container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+
+    <h2>Part 2: Flex-Wrap Gallery</h2>
+    <div class="flex-wrap-container">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+        <div class="card">Card 5</div>
+        <div class="card">Card 6</div>
+    </div>
+
+    <h2>Part 3: Flex Order + Flex-Grow Layout</h2>
+    <div class="flex-order-container">
+        <div class="left-panel">LEFT PANEL</div>
+        <div class="middle-panel">MIDDLE PANEL</div>
+        <div class="right-panel">RIGHT PANEL</div>
+    </div>
+
+</body>
+</html>
+
+
