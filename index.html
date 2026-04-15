@@ -3,79 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Activity</title>
-    <style>
-        .flex-container {
-            display: flex;
-            justify-content: space-around; /* For Part 1 */
-            align-items: center;
-        }
-
-        .flex-wrap-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start; /* Align items to the start */
-            gap: 10px; /* Space between cards */
-        }
-
-        .card {
-            background-color: #f0f0f0; /* Light grey */
-            padding: 10px;
-            border-radius: 5px;
-            width: 150px; /* Adjust as needed */
-            text-align: center;
-        }
-
-        .box {
-            background-color: #add8e6; /* Light blue */
-            padding: 20px;
-            text-align: center;
-            border-radius: 5px;
-        }
-
-        .flex-order-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .middle-panel {
-            flex-grow: 2; /* Example: Middle panel takes more space */
-            text-align: center;
-        }
-
-        .left-panel, .right-panel {
-            text-align: center;
-        }
-    </style>
+    <title>Rock Paper Scissors | Play Now</title>
+    
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Custom CSS (separate file) -->
+    <link rel="stylesheet" href="assets/css/custom.css">
 </head>
-<body>
+<body class="bg-gradient-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <!-- Game Card -->
+            <div class="col-md-8 col-lg-6">
+                <div class="card game-container shadow-lg rounded-4">
+                    <div class="card-header bg-primary text-white text-center rounded-top-4">
+                        <h1 class="h2 mb-0">Rock Paper Scissors</h1>
+                    </div>
 
-    <h2>Part 1: Basic Flexbox Row</h2>
-    <div class="flex-container">
-        <div class="box">Box 1</div>
-        <div class="box">Box 2</div>
-        <div class="box">Box 3</div>
+                    <div class="card-body p-5">
+                        <!-- Score Section -->
+                        <div class="row mb-4">
+                            <div class="col-6 text-center">
+                                <h3 class="text-secondary">Your Score</h3>
+                                <p class="score-display bg-success text-white rounded-pill p-3">
+                                    <span id="user-score">0</span>
+                                </p>
+                            </div>
+                            <div class="col-6 text-center">
+                                <h3 class="text-secondary">Computer Score</h3>
+                                <p class="score-display bg-danger text-white rounded-pill p-3">
+                                    <span id="comp-score">0</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Choice Buttons -->
+                        <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+                            <button class="choice-btn btn btn-outline-primary rounded-pill px-4 py-3" data-choice="rock">
+                                <span class="fs-3">🪨</span><br>Rock
+                            </button>
+                            <button class="choice-btn btn btn-outline-primary rounded-pill px-4 py-3" data-choice="paper">
+                                <span class="fs-3">📄</span><br>Paper
+                            </button>
+                            <button class="choice-btn btn btn-outline-primary rounded-pill px-4 py-3" data-choice="scissors">
+                                <span class="fs-3">✂️</span><br>Scissors
+                            </button>
+                        </div>
+
+                        <!-- Result Section -->
+                        <div class="text-center mb-4">
+                            <h4 class="text-dark" id="result-message">Select your move to start!</h4>
+                            <p class="text-muted mt-2" id="move-summary">-</p>
+                        </div>
+
+                        <!-- Reset Button -->
+                        <button id="reset-btn" class="btn btn-warning w-100 rounded-pill py-3 fs-5">
+                            Reset Game 🔄
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h2>Part 2: Flex-Wrap Gallery</h2>
-    <div class="flex-wrap-container">
-        <div class="card">Card 1</div>
-        <div class="card">Card 2</div>
-        <div class="card">Card 3</div>
-        <div class="card">Card 4</div>
-        <div class="card">Card 5</div>
-        <div class="card">Card 6</div>
-    </div>
-
-    <h2>Part 3: Flex Order + Flex-Grow Layout</h2>
-    <div class="flex-order-container">
-        <div class="left-panel">LEFT PANEL</div>
-        <div class="middle-panel">MIDDLE PANEL</div>
-        <div class="right-panel">RIGHT PANEL</div>
-    </div>
-
+    <!-- Bootstrap JS CDN (for optional Bootstrap components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Custom Game Logic (separate file) -->
+    <script src="assets/js/game.js"></script>
 </body>
 </html>
-
-
